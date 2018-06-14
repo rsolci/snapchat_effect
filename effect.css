@@ -1,0 +1,45 @@
+body {
+    max-width: 500px;
+    margin: 0 auto
+  }
+
+  [style*=--bg][style*=--caption] {
+    --alignment: 50%;
+    margin: 1em auto;
+    padding-bottom: 100%;
+    position: relative;
+    background: var(--bg) no-repeat center;
+    background-size: contain;
+    overflow: hidden;
+  }
+  [style*=--bg][style*=--caption]:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--bg) no-repeat center;
+    background-size: cover;
+    filter: blur(10px);
+    z-index: -1;
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  [style*=--bg][style*=--caption]:after {
+    content: var(--caption);
+    display: block;
+    width: 100%;
+    height: 2em;
+    line-height: 2em;
+    position: absolute;
+    top: var(--alignment);
+    left: 0;
+    font-size: 14pt;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,.5);
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+  }
